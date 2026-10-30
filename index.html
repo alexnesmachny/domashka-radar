@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДомашкаRadar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ДомашкаRadar</h1>
+    <button id="open-form" class="primary">+ Добавить задание</button>
+    <button id="open-remind" class="secondary">+ Lembrete</button>
+  </header>
+
+  <main>
+    <section id="bring-section">
+      <h2>Levar</h2>
+      <ul id="bring" class="bring"></ul>
+    </section>
+
+    <section>
+      <h2>Завтра</h2>
+      <div id="tomorrow" class="cards"></div>
+      <p id="tomorrow-empty" class="empty">На завтра ничего не задано.</p>
+    </section>
+
+    <section>
+      <h2>На неделе</h2>
+      <div id="week" class="cards"></div>
+      <p id="week-empty" class="empty">На эту неделю пока пусто.</p>
+    </section>
+  </main>
+
+  <div id="form-overlay" class="overlay hidden">
+    <form id="task-form" class="form-card">
+      <h2>Новое задание</h2>
+      <label>Предмет
+        <input type="text" id="subject" required maxlength="40" placeholder="Например, Математика">
+      </label>
+      <label>Что задали
+        <input type="text" id="text" required maxlength="200" placeholder="Например, § 14, № 230–240">
+      </label>
+      <label>Дата сдачи
+        <input type="date" id="due" required>
+      </label>
+      <div class="form-buttons">
+        <button type="button" id="cancel" class="secondary">Отмена</button>
+        <button type="submit" class="primary">Сохранить</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="remind-overlay" class="overlay hidden">
+    <form id="remind-form" class="form-card">
+      <h2>Новое напоминание</h2>
+      <label>O que levar
+        <input type="text" id="remind-text" required maxlength="200" placeholder="Например, livro de história">
+      </label>
+      <label>Data
+        <input type="date" id="remind-date" required>
+      </label>
+      <div class="form-buttons">
+        <button type="button" id="remind-cancel" class="secondary">Отмена</button>
+        <button type="submit" class="primary">Сохранить</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
